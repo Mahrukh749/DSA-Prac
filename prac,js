@@ -1,4 +1,4 @@
-//
+/*
 let arr = [1, 2, 3, 4, 5];
 
 let isSorted = true;
@@ -11,3 +11,19 @@ for (let i = 0; i < arr.length - 1; i++) {
 }
 
 console.log(isSorted);
+*/
+
+let arr = [1, 2, 3, 4, 2];
+
+let seen = new Set();
+let hasDuplicate = false;
+
+for (let i = 0; i < arr.length; i++) {
+  if (seen.has(arr[i])) {
+    hasDuplicate = true;
+    break;
+  }
+  seen.add(arr[i]);
+}
+
+console.log(hasDuplicate);
