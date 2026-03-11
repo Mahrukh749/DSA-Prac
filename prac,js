@@ -1,29 +1,13 @@
-/*
-let arr = [1, 2, 3, 4, 5];
-
-let isSorted = true;
-
-for (let i = 0; i < arr.length - 1; i++) {
-    if (arr[i] > arr[i + 1]) {
-        isSorted = false;
-        break;
+function twoSumBruteForce(nums, target) {
+    for (let i = 0; i < nums.length; i++) {
+        for (let j = i + 1; j < nums.length; j++) {
+            if (nums[i] + nums[j] === target) {
+                return [i, j];
+            }
+        }
     }
+    return [];
 }
 
-console.log(isSorted);
-*/
-
-let arr = [1, 2, 3, 4, 2];
-
-let seen = new Set();
-let hasDuplicate = false;
-
-for (let i = 0; i < arr.length; i++) {
-  if (seen.has(arr[i])) {
-    hasDuplicate = true;
-    break;
-  }
-  seen.add(arr[i]);
-}
-
-console.log(hasDuplicate);
+// Test
+console.log(twoSumBruteForce([2, 7, 11, 15], 9)); // Output: [0, 1]
