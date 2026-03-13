@@ -1,13 +1,11 @@
-function twoSumBruteForce(nums, target) {
-    for (let i = 0; i < nums.length; i++) {
-        for (let j = i + 1; j < nums.length; j++) {
-            if (nums[i] + nums[j] === target) {
-                return [i, j];
-            }
-        }
+function linearSearch(arr, target) {
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === target) {
+      return i; // Element mil gaya, index return karo
     }
-    return [];
+  }
+  return -1; // Element nahi mila
 }
 
-// Test
-console.log(twoSumBruteForce([2, 7, 11, 15], 9)); // Output: [0, 1]
+const numbers = [10, 25, 30, 45, 50];
+console.log(linearSearch(numbers, 45)); // Output: 3
